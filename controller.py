@@ -2,12 +2,15 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-import model
+from model import ListMovie
 
 class Handler():
+    '''
+    Clase del controlador con los manejadores de la vistas
+    '''
 
     # Boton añadir pelicula
-    def on_anadir(self, w):
+    def on_add(self, w):
 
         # Obtener dialogo añadir y sus entradas de texto y spinbuttons
         danadir = builder.get_object("dialog1")
@@ -18,6 +21,7 @@ class Handler():
 
         # Esperar por una respuesta valida (aceptar con datos correctos o cancelar)
         while True:
+            danadir.set_title("Añadir Película")
             # Correr el dialogo
             r = danadir.run()
 
@@ -53,16 +57,17 @@ class Handler():
         danadir.hide()
 
     # Boton eliminar pelicula
-    def on_eliminar(self, w):
+    def on_remove(self, w):
+
+        movie = builder.get_object("treeview1").get_selection().get_selected()[1]
 
         # No hacer nada si no hay una pelicula seleccionada
-        if builder.get_object("treeview1").get_selection().get_selected()[1] == None:
+        if movie == None:
             return
 
         deliminar = builder.get_object("messagedialog1")
 
         # Preparar la label secundaria para que muestre el titulo de la pelicula
-        movie = builder.get_object("treeview1").get_selection().get_selected()[1]
         deliminar.get_message_area().get_children()[1].set_label(model.get_title(movie))
 
         # Correr el dialogo
@@ -75,6 +80,62 @@ class Handler():
 
         # Esconder dialogo
         deliminar.hide()
+
+    # Boton añadir pelicula
+    def on_edit(self, w):
+
+        movie = builder.get_object("treeview1").get_selection().get_selected()[1]
+
+        # No hacer nada si no hay una pelicula seleccionada
+        if movie == None:
+            return
+
+        # Obtener dialogo editar y sus entradas de texto y spinbuttons
+        deditar = builder.get_object("dialog1")
+        etitulo = builder.get_object("entry1")
+        eano = builder.get_object("spinbutton1")
+        eduracion = builder.get_object("spinbutton2")
+        egenero = builder.get_object("entry2")
+
+        # Se editan las entradas de texto y spinbuttons
+        etitulo.set_text(model.get_title(movie))
+        eano.set_value(int(model.get_year(movie)))
+        eduracion.set_value(int(model.get_duration(movie)))
+        egenero.set_text(model.get_genre(movie))
+
+        # Esperar por una respuesta valida (aceptar con datos correctos o cancelar)
+        while True:
+            deditar.set_title("Editar Película")
+            # Correr el dialogo
+            r = deditar.run()
+
+            # Si se selecciona ok
+            if r == 0:
+                # Obtener datos introducidos
+                titulo = etitulo.get_text()
+                ano = str(eano.get_value_as_int())
+                duracion = str(eduracion.get_value_as_int())
+                genero = egenero.get_text()
+
+                # Comprobar que la pelicula tenga titulo
+                if titulo == "":
+                    # Dialogo informativo
+                    builder.get_object("messagedialog2").run()
+                    builder.get_object("messagedialog2").hide()
+                    continue
+
+                # Añadir pelicula al modelo
+                model.set_movie(movie, [titulo, ano, duracion, genero])
+                break
+            else:
+                break
+
+        # Resetear contenido de las entradas y ocultar dialogo
+        etitulo.set_text("")
+        eano.set_value(2000)
+        eduracion.set_value(0)
+        egenero.set_text("")
+        deditar.hide()
 
     # Cierre de aplicacion
     def on_close(self, w, e):
@@ -90,6 +151,12 @@ def enable_delete_cond():
     if model.is_empty():
         builder.get_object("button2").set_sensitive(True)
 
+### AÑADIR DISABLE Y ENABLE DE EDIT
+
+# Se crea el modelo
+model = ListMovie()
+
+# Se crea las vistas
 builder = Gtk.Builder()
 builder.add_from_file("view.glade")
 builder.connect_signals(Handler())
