@@ -355,8 +355,8 @@
   </object>
   <object class="GtkMessageDialog" id="messagedialog2">
     <property name="can_focus">False</property>
-    <property name="type">popup</property>
     <property name="title" translatable="yes">Título vacío</property>
+    <property name="resizable">False</property>
     <property name="modal">True</property>
     <property name="type_hint">dialog</property>
     <property name="transient_for">dialog1</property>
@@ -402,10 +402,9 @@
   </object>
   <object class="GtkMessageDialog" id="messagedialog1">
     <property name="can_focus">False</property>
-    <property name="type">popup</property>
     <property name="title" translatable="yes">Eliminar película</property>
     <property name="modal">True</property>
-    <property name="type_hint">normal</property>
+    <property name="type_hint">dialog</property>
     <property name="transient_for">window1</property>
     <property name="message_type">warning</property>
     <property name="text" translatable="yes">¿Desea eliminar esta película?</property>
