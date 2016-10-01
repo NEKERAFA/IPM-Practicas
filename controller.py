@@ -141,6 +141,7 @@ class Handler():
 
     # Cierre de aplicacion
     def on_close(self, w, e):
+        model.save()
         Gtk.main_quit()
 
 # Deshabilitar boton de eliminar si no hay peliculas
