@@ -1,4 +1,14 @@
 [
-	{"title": "I, Robot", "year": "2010", "duration": "150", "genre": "Ciencia Ficción"},
-	{"title": "Heidi", "year": "1999", "duration": "200", "genre": "Animación"}
+    {
+        "duration": "200",
+        "genre": "Ciencia Ficción",
+        "title": "I, Robot",
+        "year": "2010"
+    },
+    {
+        "duration": "120",
+        "genre": "Lolicon",
+        "title": "My Little Rafa, programming is magic",
+        "year": "2016"
+    }
 ]

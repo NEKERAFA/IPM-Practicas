@@ -20,7 +20,8 @@ class Handler():
 
         # Obtener dialogo añadir y sus entradas de texto y spinbuttons
         danadir = builder.get_object("dialog1")
-        danadir.set_title("Añadir Película")
+        titdialog = _("Añadir película")
+        danadir.set_title(titdialog)
 
         etitulo = builder.get_object("entry1")
         eano = builder.get_object("spinbutton1")
@@ -104,7 +105,8 @@ class Handler():
         # Obtener dialogo editar y sus entradas de texto y spinbuttons
         # Se reutiliza el dialogo de añadir
         deditar = builder.get_object("dialog1")
-        deditar.set_title("Editar Película")
+        titdialog = _("Editar película")
+        deditar.set_title(titdialog)
         etitulo = builder.get_object("entry1")
         eano = builder.get_object("spinbutton1")
         eduracion = builder.get_object("spinbutton2")
@@ -169,6 +171,9 @@ def disable_edit_cond():
 def enable_edit_cond():
     if model.is_empty():
         builder.get_object("button3").set_sensitive(True)
+# Funciones de traduccion
+_ = gettext.gettext()
+# Falta ngettext porque al menos de momento no hace falta
 
 # Seleccionar locale
 locale.setlocale(locale.LC_ALL, '')
