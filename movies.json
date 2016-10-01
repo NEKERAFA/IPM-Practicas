@@ -1,1 +1,4 @@
-[{"title": "unitato", "duration": "500", "genre": "sdfs", "year": "1900"}, {"title": "sdfsafs", "duration": "1", "genre": "dsfsd", "year": "2000"}]
+[
+	{"title": "I, Robot", "year": "2010", "duration": "150", "genre": "Ciencia Ficción"},
+	{"title": "Heidi", "year": "1999", "duration": "200", "genre": "Animación"}
+]

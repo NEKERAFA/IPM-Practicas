@@ -20,7 +20,7 @@ class ListMovie():
     def __init__(self):
         self.listmodel = Gtk.ListStore(str, str, str, str)
         with io.open(JSON_FILE, 'r', encoding='utf8') as json_fd:
-            movies = json.load(json_fd)
+            movies = json.load(json_fd, indent=4, sort_keys=True)
         for i in range(len(movies)):
             self.listmodel.append([movies[i]["title"], movies[i]["year"], movies[i]["duration"], movies[i]["genre"]])
         json_fd.close()
