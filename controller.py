@@ -14,14 +14,21 @@ class Handler():
 
         # Obtener dialogo añadir y sus entradas de texto y spinbuttons
         danadir = builder.get_object("dialog1")
+        danadir.set_title("Añadir Película")
+
         etitulo = builder.get_object("entry1")
         eano = builder.get_object("spinbutton1")
         eduracion = builder.get_object("spinbutton2")
         egenero = builder.get_object("entry2")
 
+        # Resetear contenido de las entradas
+        etitulo.set_text("")
+        eano.set_value(2000)
+        eduracion.set_value(0)
+        egenero.set_text("")
+
         # Esperar por una respuesta valida (aceptar con datos correctos o cancelar)
         while True:
-            danadir.set_title("Añadir Película")
             # Correr el dialogo
             r = danadir.run()
 
@@ -49,11 +56,7 @@ class Handler():
             else:
                 break
 
-        # Resetear contenido de las entradas y ocultar dialogo
-        etitulo.set_text("")
-        eano.set_value(2000)
-        eduracion.set_value(0)
-        egenero.set_text("")
+        # Ocultar dialogo
         danadir.hide()
 
     # Boton eliminar pelicula
@@ -91,13 +94,15 @@ class Handler():
             return
 
         # Obtener dialogo editar y sus entradas de texto y spinbuttons
+        # Se reutiliza el dialogo de añadir
         deditar = builder.get_object("dialog1")
+        deditar.set_title("Editar Película")
         etitulo = builder.get_object("entry1")
         eano = builder.get_object("spinbutton1")
         eduracion = builder.get_object("spinbutton2")
         egenero = builder.get_object("entry2")
 
-        # Se editan las entradas de texto y spinbuttons
+        # Se muestran las entradas de texto y spinbuttons con los datos originales de la pelicula
         etitulo.set_text(model.get_title(movie))
         eano.set_value(int(model.get_year(movie)))
         eduracion.set_value(int(model.get_duration(movie)))
@@ -105,7 +110,6 @@ class Handler():
 
         # Esperar por una respuesta valida (aceptar con datos correctos o cancelar)
         while True:
-            deditar.set_title("Editar Película")
             # Correr el dialogo
             r = deditar.run()
 
@@ -130,11 +134,7 @@ class Handler():
             else:
                 break
 
-        # Resetear contenido de las entradas y ocultar dialogo
-        etitulo.set_text("")
-        eano.set_value(2000)
-        eduracion.set_value(0)
-        egenero.set_text("")
+        # Ocultar dialogo
         deditar.hide()
 
     # Cierre de aplicacion
