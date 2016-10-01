@@ -47,8 +47,9 @@ class Handler():
                     builder.get_object("messagedialog2").hide()
                     continue
 
-                # Habilitar boton Eliminar si es necesario
+                # Habilitar botones Eliminar y Editar si es necesario
                 enable_delete_cond()
+                enable_edit_cond()
 
                 # Añadir pelicula al modelo
                 model.add_movie([titulo, ano, duracion, genero])
@@ -80,6 +81,7 @@ class Handler():
         if r == 0:
             model.delete_movie(movie)
             disable_delete_cond()
+            disable_edit_cond()
 
         # Esconder dialogo
         deliminar.hide()
@@ -151,12 +153,20 @@ def enable_delete_cond():
     if model.is_empty():
         builder.get_object("button2").set_sensitive(True)
 
-### AÑADIR DISABLE Y ENABLE DE EDIT
+# Deshabilitar boton de editar si no hay peliculas
+def disable_edit_cond():
+    if model.is_empty():
+        builder.get_object("button3").set_sensitive(False)
+
+# Habilitar boton de editar si empieza a haber peliculas
+def enable_edit_cond():
+    if model.is_empty():
+        builder.get_object("button3").set_sensitive(True)
 
 # Se crea el modelo
 model = ListMovie()
 
-# Se crea las vistas
+# Se crean las vistas
 builder = Gtk.Builder()
 builder.add_from_file("view.glade")
 builder.connect_signals(Handler())
@@ -164,8 +174,9 @@ builder.connect_signals(Handler())
 # Establecer modelo en la vista
 builder.get_object("treeview1").set_model(model.listmodel)
 
-# Desactivar Eliminar si es necesario
+# Desactivar Eliminar y Editar si es necesario
 disable_delete_cond()
+disable_edit_cond()
 
 mainwin = builder.get_object("window1")
 mainwin.show_all()
