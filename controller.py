@@ -26,13 +26,13 @@ class Handler():
         etitulo = builder.get_object("entry1")
         eano = builder.get_object("spinbutton1")
         eduracion = builder.get_object("spinbutton2")
-        egenero = builder.get_object("entry2")
+        edirector = builder.get_object("entry2")
 
         # Resetear contenido de las entradas
         etitulo.set_text("")
         eano.set_value(2000)
         eduracion.set_value(0)
-        egenero.set_text("")
+        edirector.set_text("")
 
         # Esperar por una respuesta valida (aceptar con datos correctos o cancelar)
         while True:
@@ -45,7 +45,7 @@ class Handler():
                 titulo = etitulo.get_text()
                 ano = str(eano.get_value_as_int())
                 duracion = str(eduracion.get_value_as_int())
-                genero = egenero.get_text()
+                director = edirector.get_text()
 
                 # Comprobar que la pelicula tenga titulo
                 if titulo == "":
@@ -59,7 +59,7 @@ class Handler():
                 enable_edit_cond()
 
                 # Añadir pelicula al modelo
-                model.add_movie([titulo, ano, duracion, genero])
+                model.add_movie([titulo, ano, duracion, director])
                 break
             else:
                 break
@@ -110,13 +110,13 @@ class Handler():
         etitulo = builder.get_object("entry1")
         eano = builder.get_object("spinbutton1")
         eduracion = builder.get_object("spinbutton2")
-        egenero = builder.get_object("entry2")
+        edirector = builder.get_object("entry2")
 
         # Se muestran las entradas de texto y spinbuttons con los datos originales de la pelicula
         etitulo.set_text(model.get_title(movie))
         eano.set_value(int(model.get_year(movie)))
         eduracion.set_value(int(model.get_duration(movie)))
-        egenero.set_text(model.get_genre(movie))
+        edirector.set_text(model.get_director(movie))
 
         # Esperar por una respuesta valida (aceptar con datos correctos o cancelar)
         while True:
@@ -129,7 +129,7 @@ class Handler():
                 titulo = etitulo.get_text()
                 ano = str(eano.get_value_as_int())
                 duracion = str(eduracion.get_value_as_int())
-                genero = egenero.get_text()
+                director = edirector.get_text()
 
                 # Comprobar que la pelicula tenga titulo
                 if titulo == "":
@@ -139,7 +139,7 @@ class Handler():
                     continue
 
                 # Añadir pelicula al modelo
-                model.set_movie(movie, [titulo, ano, duracion, genero])
+                model.set_movie(movie, [titulo, ano, duracion, director])
                 break
             else:
                 break
@@ -172,7 +172,7 @@ def enable_edit_cond():
     if model.is_empty():
         builder.get_object("button3").set_sensitive(True)
 # Funciones de traduccion
-_ = gettext.gettext()
+_ = gettext.gettext
 # Falta ngettext porque al menos de momento no hace falta
 
 # Seleccionar locale

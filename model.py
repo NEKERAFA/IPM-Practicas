@@ -22,7 +22,7 @@ class ListMovie():
         with io.open(JSON_FILE, 'r', encoding='utf8') as json_fd:
             movies = json.load(json_fd)
         for i in range(len(movies)):
-            self.listmodel.append([movies[i]["title"], movies[i]["year"], movies[i]["duration"], movies[i]["genre"]])
+            self.listmodel.append([movies[i]["title"], movies[i]["year"], movies[i]["duration"], movies[i]["director"]])
         json_fd.close()
 
     # Añadir pelicula a la lista
@@ -51,7 +51,7 @@ class ListMovie():
         return self.listmodel[iter][2]
 
     # Obtener género de una pelicula
-    def get_genre(self, iter):
+    def get_director(self, iter):
         return self.listmodel[iter][3]
 
     # Saber si la lista esta vacia
@@ -67,7 +67,7 @@ class ListMovie():
                 'title': self.get_title(i),
                 'year': self.get_year(i),
                 'duration': self.get_duration(i),
-                'genre': self.get_genre(i)
+                'director': self.get_director(i)
             })
 
         # Guardamos el diccionario como archivo json

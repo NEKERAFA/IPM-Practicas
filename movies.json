@@ -1,14 +1,14 @@
 [
     {
+        "director": "Some weirdo",
         "duration": "200",
-        "genre": "Ciencia Ficción",
         "title": "I, Robot",
         "year": "2010"
     },
     {
+        "director": "Cute Little Evelyn :3",
         "duration": "120",
-        "genre": "Lolicon",
-        "title": "My Little Rafa, programming is magic",
+        "title": "My Little Rafa, Programming is Magic",
         "year": "2016"
     }
 ]
