@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
@@ -73,7 +75,7 @@ class ListMovie():
             json_fd.write(json.dumps(movies))
             json_fd.flush()
             json_fd.close()
-        
+
 
 # Datos para ListStore
 movies = [["I, Robot", "2010", "150", "Ciencia Ficción"],

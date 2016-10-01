@@ -1,8 +1,14 @@
+# coding=utf-8
+
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
 from model import ListMovie
+
+import locale
+import os
+import gettext
 
 class Handler():
     '''
@@ -164,11 +170,21 @@ def enable_edit_cond():
     if model.is_empty():
         builder.get_object("button3").set_sensitive(True)
 
+# Seleccionar locale
+locale.setlocale(locale.LC_ALL, '')
+LOCALE_DIR = os.path.join(os.path.dirname(__file__), "locale")
+# LOCALE_DIR solo contiene "locale"
+locale.bindtextdomain("p1", LOCALE_DIR)
+gettext.bindtextdomain("p1", LOCALE_DIR)
+gettext.textdomain("p1")
+
 # Se crea el modelo
 model = ListMovie()
 
 # Se crean las vistas
 builder = Gtk.Builder()
+# Dominio de traduccion
+builder.set_translation_domain("p1")
 builder.add_from_file("view.glade")
 builder.connect_signals(Handler())
 
