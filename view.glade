@@ -95,7 +95,7 @@
                 <child>
                   <object class="GtkTreeViewColumn" id="treeviewcolumn4">
                     <property name="sizing">autosize</property>
-                    <property name="title" translatable="yes">Género</property>
+                    <property name="title" translatable="yes">Director</property>
                     <property name="expand">True</property>
                     <child>
                       <object class="GtkCellRendererText" id="cellrenderertext3">
@@ -184,6 +184,7 @@
   </object>
   <object class="GtkDialog" id="dialog1">
     <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Add / Edit</property>
     <property name="modal">True</property>
     <property name="destroy_with_parent">True</property>
     <property name="type_hint">dialog</property>
@@ -320,7 +321,8 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">end</property>
-                <property name="label" translatable="yes">Género</property>
+                <property name="label" translatable="yes">Director</property>
+                <property name="angle">0.029999999999999999</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -353,11 +355,13 @@
   </object>
   <object class="GtkMessageDialog" id="messagedialog2">
     <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="title" translatable="yes">Título vacío</property>
     <property name="modal">True</property>
     <property name="type_hint">dialog</property>
     <property name="transient_for">dialog1</property>
     <property name="message_type">error</property>
-    <property name="text" translatable="yes">No existe título</property>
+    <property name="text" translatable="yes">No existe el título</property>
     <property name="secondary_text" translatable="yes">Debe introducir un título para la película</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="messagedialog-vbox3">
@@ -398,6 +402,8 @@
   </object>
   <object class="GtkMessageDialog" id="messagedialog1">
     <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="title" translatable="yes">Eliminar película</property>
     <property name="modal">True</property>
     <property name="type_hint">normal</property>
     <property name="transient_for">window1</property>
