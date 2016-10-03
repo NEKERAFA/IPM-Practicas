@@ -4,7 +4,7 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-from model import ListMovie
+from model import *
 
 import locale
 import os
@@ -12,7 +12,7 @@ import gettext
 
 class Handler():
     '''
-    Clase del controlador con los manejadores de la vistas
+    Clase con los manejadores de la vista
     '''
 
     # Boton añadir pelicula
@@ -59,7 +59,8 @@ class Handler():
                 enable_edit_cond()
 
                 # Añadir pelicula al modelo
-                model.add_movie([titulo, ano, duracion, director])
+                movie = Movie(titulo, ano, duracion, director)
+                model.add_movie(movie)
                 break
             else:
                 break
@@ -96,10 +97,10 @@ class Handler():
     # Boton añadir pelicula
     def on_edit(self, w):
 
-        movie = builder.get_object("treeview1").get_selection().get_selected()[1]
+        movie_iter = builder.get_object("treeview1").get_selection().get_selected()[1]
 
         # No hacer nada si no hay una pelicula seleccionada
-        if movie == None:
+        if movie_iter == None:
             return
 
         # Obtener dialogo editar y sus entradas de texto y spinbuttons
@@ -113,10 +114,10 @@ class Handler():
         edirector = builder.get_object("entry2")
 
         # Se muestran las entradas de texto y spinbuttons con los datos originales de la pelicula
-        etitulo.set_text(model.get_title(movie))
-        eano.set_value(int(model.get_year(movie)))
-        eduracion.set_value(int(model.get_duration(movie)))
-        edirector.set_text(model.get_director(movie))
+        etitulo.set_text(model.get_title(movie_iter))
+        eano.set_value(int(model.get_year(movie_iter)))
+        eduracion.set_value(int(model.get_duration(movie_iter)))
+        edirector.set_text(model.get_director(movie_iter))
 
         # Esperar por una respuesta valida (aceptar con datos correctos o cancelar)
         while True:
@@ -139,7 +140,8 @@ class Handler():
                     continue
 
                 # Añadir pelicula al modelo
-                model.set_movie(movie, [titulo, ano, duracion, director])
+                movie = Movie(titulo, ano, duracion, director)
+                model.set_movie(movie_iter, movie)
                 break
             else:
                 break

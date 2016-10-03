@@ -1,13 +1,7 @@
 [
     {
-        "director": "Some weirdo",
-        "duration": "200",
-        "title": "I, Robot",
-        "year": "2010"
-    },
-    {
         "director": "Cute Little Evelyn :3",
-        "duration": "120",
+        "duration": "69",
         "title": "My Little Rafa, Programming is Magic",
         "year": "2016"
     },
@@ -16,5 +10,23 @@
         "duration": "60",
         "title": "Ferchu Strikes Again!",
         "year": "2016"
+    },
+    {
+        "director": "Cute Little Evelyn :3",
+        "duration": "170",
+        "title": "Clau en el País de las Matemáticas",
+        "year": "2016"
+    },
+    {
+        "director": "Cute Little Evelyn :3",
+        "duration": "77",
+        "title": "Y Abyss tenía razón",
+        "year": "2016"
+    },
+    {
+        "director": "NEKERAFA",
+        "duration": "34",
+        "title": "Solo en la FIC",
+        "year": "2015"
     }
 ]
