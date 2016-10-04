@@ -10,6 +10,18 @@ import locale
 import os
 import gettext
 
+# Funciones de traduccion
+_ = gettext.gettext
+# Falta ngettext porque al menos de momento no hace falta
+
+# Seleccionar locale
+locale.setlocale(locale.LC_ALL, '')
+LOCALE_DIR = os.path.join(os.path.dirname(__file__), "locale")
+# LOCALE_DIR solo contiene "locale" en verdad
+locale.bindtextdomain("p1", LOCALE_DIR)
+gettext.bindtextdomain("p1", LOCALE_DIR)
+gettext.textdomain("p1")
+
 class Handler():
     '''
     Clase con los manejadores de la vista
@@ -173,17 +185,6 @@ def disable_edit_cond():
 def enable_edit_cond():
     if model.is_empty():
         builder.get_object("button3").set_sensitive(True)
-# Funciones de traduccion
-_ = gettext.gettext
-# Falta ngettext porque al menos de momento no hace falta
-
-# Seleccionar locale
-locale.setlocale(locale.LC_ALL, '')
-LOCALE_DIR = os.path.join(os.path.dirname(__file__), "locale")
-# LOCALE_DIR solo contiene "locale"
-locale.bindtextdomain("p1", LOCALE_DIR)
-gettext.bindtextdomain("p1", LOCALE_DIR)
-gettext.textdomain("p1")
 
 # Se crea el modelo
 model = ListMovie()
