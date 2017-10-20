@@ -1,0 +1,87 @@
+body {
+    width: 100%;
+}
+
+/* Estilo de las pestañas */
+
+.tabs ul {
+    display: flex;
+}
+
+.tabs ul li {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+/* Ocultar las imágenes de las pestañas */
+.tabs a img {
+    display: none;
+}
+
+/* Menú de opciones */
+.dropdown_btn {
+    background-color: #08436b;
+    color: white;
+    border: none;
+    vertical-align: middle;
+}
+
+#dropdown {
+    background-color: #08436b;
+    width: 100%;
+}
+
+#dropdown_menu {
+    list-style: none;
+}
+
+#dropdown a {
+    text-decoration: none;
+    display: block;
+    color: white;
+    padding: 0.5em;
+    padding-left: 0.75em;
+    font-size: 0.75em;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.selected_menu {
+    font-weight: bold;
+    background-color: #2397de;
+}
+
+section select {
+    width: 50%;
+}
+
+/* Tabla general de información */
+.info {
+    margin-top: 0.5em
+}
+
+.info, .info thead, .info tbody, .info th, .info td, .info tr {
+    display: block;
+}
+
+table.info td {
+    position: relative;
+    padding: 0.25em;
+    padding-left: 50%;
+    width: 50%;
+    font-size: 0.75em;
+}
+
+table.info td:before {
+    position: absolute;
+    top: 0.25em;
+    left: 5%;
+    width: 45%;
+    white-space: nowrap;
+}

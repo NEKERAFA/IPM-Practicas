@@ -1,0 +1,64 @@
+/* Tabla general de información */
+
+.info td span {
+    color: #666;
+}
+
+.info td:nth-of-type(4) {
+    color: #005e8b;
+}
+
+.info td:nth-of-type(4) span {
+    font-size: 0.95em;
+}
+
+@media only screen and (max-width: 767px) {
+    .info th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table.info td:nth-of-type(1):before { content: "Posición"; color: black; }
+    table.info td:nth-of-type(2):before { content: "Equipo"; color: black; }
+    table.info td:nth-of-type(4):before { content: "Nombre"; color: black; }
+    table.info td:nth-of-type(5):before { content: "Partidos"; color: black; }
+    table.info td:nth-of-type(6):before { content: "Goles (%)"; color: black; }
+    table.info td:nth-of-type(7):before { content: "Asistencias (%)"; color: black; }
+    table.info td:nth-of-type(8):before { content: "Penaltis (%)"; color: black; }
+    table.info td:nth-of-type(9):before { content: "FD (%)"; color: black; }
+    table.info td:nth-of-type(10):before { content: "Tarjetas (%)"; color: black; }
+    table.info td:nth-of-type(11):before { content: "T. Rojas (%)"; color: black; }
+
+    .info td:nth-of-type(3) {
+        display: none;
+    }
+
+    .info td:nth-of-type(1) {
+        background: #d6d6d6;
+        font-weight: bold;
+    }
+
+    .info td:nth-of-type(6) {
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .info td:nth-of-type(5), .info td:nth-of-type(6), .info td:nth-of-type(7),
+    .info td:nth-of-type(8), .info td:nth-of-type(9), .info td:nth-of-type(10),
+    .info td:nth-of-type(11) {
+        text-align: center;
+        border: 1px solid #e8e8e8;
+    }
+
+    .info td:nth-of-type(1), .info td:nth-of-type(2) {
+        text-align: center;
+    }
+
+    .info td:nth-of-type(6), .info td:nth-of-type(6) span {
+        background: #18b;
+        color: white;
+        font-weight: bold;
+    }
+}

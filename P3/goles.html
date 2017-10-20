@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>FGP HOCKEY PATINES</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="mobile.css" media="only screen and (max-width: 767px)" rel="stylesheet" type="text/css"/>
+        <link href="desktop.css" media="only screen and (min-width: 768px)" rel="stylesheet" type="text/css"/>
+        <link href="goles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <img src="img/header_fgp.png" alt="Federación Galega de Patinaxe - Hockey Patines">
+        </header>
+
+        <nav class="tabs">
+            <ul role="tablist">
+                <!-- El cierre de cada li esta pegado al inicio del siguiente para evitar espacios en version desktop -->
+                <li role="tab" aria-selected="false">
+                    <a href="#">
+                        <img src="img/icon_calendar.png" alt="">
+                        AGENDA FGP
+                    </a>
+                </li><li id="selected_tab" role="tab" aria-selected="true">
+                    <a href="#">
+                        <img src="img/icon_hp.png" alt="">
+                        HOCKEY PATINES
+                    </a>
+                </li><li role="tab" aria-selected="false">
+                    <a href="#">
+                        <img src="img/icon_hl.png" alt="">
+                        HOCKEY LÍNEA
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <section role="main tabpanel">
+            <h1>
+                <button class="dropdown_btn" aria-haspopup="true" aria-controls="dropdown" onclick="menu()">
+                    <img src="img/ic_menu_white_24dp_1x.png" alt="Menu">
+                </button>
+                LIGA SENIOR AUTONÓMICA
+                <span>2016/17</span>
+            </h1>
+
+            <div class="menu-container" role="navigation">
+                <nav id="dropdown" class="hidden">
+                    <ul id="dropdown_menu">
+                        <li aria-selected='false'><a href="#">CLASIFICACIÓN</a></li>
+                        <li aria-selected='false'><a href="index.html">CALENDARIO</a></li>
+                        <li aria-selected='false'><a href="#">ÁRBITROS</a></li>
+                        <li aria-selected='true' class="selected_menu"><a href="#">GOLES</a></li>
+                        <li aria-selected='false'><a href="#">TARJETAS</a></li>
+                        <li aria-selected='false'><a href="#">PLANTILLAS</a></li>
+                    </ul>
+                </nav>
+
+                <select id="table_selection" aria-controls="table-info" onchange="change_filter()">
+                    <option value="default">Filtro Club...</option>
+                    <option value="dominicos">CLUB AA DOMINICOS</option>
+                    <option value="compostela">C.H. COMPOSTELA</option>
+                    <option value="liceo">H.C. LICEO</option>
+                    <option value="ordenes">A.C. ORDENES</option>
+                </select>
+            </div>
+
+            <div class="info-div">
+                <table id="table-info" class="info" aria-live="assertive" aria-atomic="true" aria-relevant="text">
+                    <tr class="head">
+                        <th colspan="4"></th>
+                        <th>Partidos</th>
+                        <th>Goles</th>
+                        <th>Asist</th>
+                        <th>Pen</th>
+                        <th>FD</th>
+                        <th>
+                            <i class="fa fa-file icon_boton" style="color: #18b;"></i>
+                        </th>
+                        <th>
+                            <i class="fa fa-file icon_boton" style="color: #e60000;"></i>
+                        </th>
+                    </tr>
+                    <tr class="dominicos">
+                        <td>1</td>
+                        <td>CLUB AA DOMINICOS</td>
+                        <td>
+                            <i class="icon dominicos"></i>
+                        </td>
+                        <td>
+                            FERNÁNDEZ BLANCO
+                            <span>PABLO</span>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            21
+                            <span>(2.10pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            3
+                            <span>(0.30pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                    </tr>
+                    <tr class="liceo">
+                        <td>2</td>
+                        <td>H.C. LICEO</td>
+                        <td>
+                            <i class="icon liceo"></i>
+                        </td>
+                        <td>
+                            ALCALDE SUÁREZ
+                            <span>GERVASIO</span>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            19
+                            <span>(1.90pp)</span>
+                        </td>
+                        <td>
+                            1
+                            <span>(0.10pp)</span>
+                        </td>
+                        <td>
+                            2
+                            <span>(0.20pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            1
+                            <span>(0.10pp)</span>
+                        </td>
+                    </tr>
+                    <tr class="compostela">
+                        <td>3</td>
+                        <td>C.H. COMPOSTELA</td>
+                        <td>
+                            <i class="icon compostela"></i>
+                        </td>
+                        <td>
+                            ROJO AMOR
+                            <span>ANASTASIO</span>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            17
+                            <span>(1.70pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            4
+                            <span>(0.40pp)</span>
+                        </td>
+                        <td>
+                            1
+                            <span>(0.10pp)</span>
+                        </td>
+                        <td>
+                            7
+                            <span>(0.70pp)</span>
+                        </td>
+                    </tr>
+                    <tr class="ordenes">
+                        <td>4</td>
+                        <td>A.C. ORDENES</td>
+                        <td>
+                            <i class="icon ordenes"></i>
+                        </td>
+                        <td>
+                            ESPASANDÍN CAMAFREITA
+                            <span>RIGOBERTO</span>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            13
+                            <span>(1.30pp)</span>
+                        </td>
+                        <td>
+                            4
+                            <span>(0.40pp)</span>
+                        </td>
+                        <td>
+                            1
+                            <span>(0.10pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                    </tr>
+                    <tr class="dominicos">
+                        <td>5</td>
+                        <td>CLUB AA DOMINICOS</td>
+                        <td>
+                            <i class="icon dominicos"></i>
+                        </td>
+                        <td>
+                            FARIÑA GARCÍA
+                            <span>HERMINIO</span>
+                        </td>
+                        <td>10</td>
+                        <td>
+                            3
+                            <span>(0.30pp)</span>
+                        </td>
+                        <td>
+                            2
+                            <span>(0.20pp)</span>
+                        </td>
+                        <td>
+                            0
+                            <span>(0.00pp)</span>
+                        </td>
+                        <td>
+                            1
+                            <span>(0.10pp)</span>
+                        </td>
+                        <td>
+                            2
+                            <span>(0.20pp)</span>
+                        </td>
+                        <td>
+                            2
+                            <span>(0.20pp)</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <script src="menu-dropdown.js"></script>
+    </body>
+</html>

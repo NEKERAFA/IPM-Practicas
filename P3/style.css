@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 100%;
+    color: black;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Estilo de las pestañas */
+
+.tabs ul {
+    list-style: none;
+}
+
+.tabs li {
+    border-bottom: 1px solid #08436b;
+    border-top: 1px solid #0e71b4;
+    background: #2397de;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.tabs #selected_tab {
+    background: #08436b;
+    border-top: 1px solid #08436b;
+}
+
+.tabs ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.75em;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+section h1 {
+    background: #08436b;
+    font-size: 1.25em;
+    color: white;
+    padding: 0.25em;
+}
+
+section h1 span {
+    color: #ccc;
+    font-size: 0.85em;
+}
+
+section select {
+    font-size: 0.75em;
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    background: #e2e2e2;
+    border: 1px solid #ccc;
+}
+
+/* Tabla general de información */
+
+.info {
+    border-collapse: collapse;
+}
+
+.info th {
+    background: #d6d6d6;
+    font-weight: bold;
+    font-size: 0.85em;
+    padding: 0.5em;
+}
+
+.info tr {
+    border-top: 1px solid #e8e8e8;
+}
+
+.info tr:nth-child(even) {
+    background: #f6f6f6;
+}
+
+.info td {
+    font-size: 0.75em;
+    padding: 0.25em;
+}

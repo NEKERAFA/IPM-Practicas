@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">P2</string>
+    <string name="showing_title">Showing</string>
+    <string name="showing_random_element">Element of</string>
+    <string name="action_add">Add Category</string>
+    <string name="action_add_child">Add Element</string>
+    <string name="element_name">Name</string>
+    <string name="new_element_name">New Name</string>
+    <string name="add_dialog_title">New Item</string>
+    <string name="remove_dialog_title">Remove</string>
+    <string name="remove_dialog_message">Do you want to remove all selected elements?</string>
+    <string name="edit_dialog_title">Edit Element</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_add">Add</string>
+    <string name="confirm_edit">Edit</string>
+    <string name="confirm_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="default_name">New Element</string>
+</resources>

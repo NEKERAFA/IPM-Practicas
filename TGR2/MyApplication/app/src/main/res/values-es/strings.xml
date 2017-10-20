@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">P2</string>
+    <string name="showing_title">Mostrando</string>
+    <string name="showing_random_element">Elemento de</string>
+    <string name="action_add">Añadir Categoría</string>
+    <string name="action_add_child">Añadir Elemento</string>
+    <string name="element_name">Nombre</string>
+    <string name="new_element_name">Nuevo Nombre</string>
+    <string name="add_dialog_title">Nuevo Elemento</string>
+    <string name="remove_dialog_title">Eliminar</string>
+    <string name="remove_dialog_message">¿Seguro que desea eliminar los elementos seleccionados?</string>
+    <string name="edit_dialog_title">Editar Elemento</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm_add">Añadir</string>
+    <string name="confirm_edit">Editar</string>
+    <string name="confirm_delete">Eliminar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="default_name">Nuevo Elemento</string>
+</resources>

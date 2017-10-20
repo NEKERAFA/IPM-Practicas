@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">P2</string>
+    <string name="showing_title">Amosando</string>
+    <string name="showing_random_element">Elemento de</string>
+    <string name="action_add">Engadir Categoría</string>
+    <string name="action_add_child">Engadir Elemento</string>
+    <string name="element_name">Nome</string>
+    <string name="new_element_name">Novo Nome</string>
+    <string name="add_dialog_title">Novo Elemento</string>
+    <string name="remove_dialog_title">Eliminar</string>
+    <string name="remove_dialog_message">Desexa eliminar os elementos seleccionados?</string>
+    <string name="edit_dialog_title">Editar Elemento</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm_add">Engadir</string>
+    <string name="confirm_edit">Editar</string>
+    <string name="confirm_delete">Eliminar</string>
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Eliminar</string>
+    <string name="default_name">Novo Elemento</string>
+</resources>

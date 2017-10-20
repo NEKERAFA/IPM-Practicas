@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-16 10:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: p1.py:39
+msgid "Añadir película"
+msgstr ""
+
+#: p1.py:155
+msgid "Editar película"
+msgstr ""
+
+#: view.glade:8
+msgid "Películas"
+msgstr ""
+
+#: view.glade:58 view.glade:163 view.glade:259 view.glade:673 view.glade:864
+msgid "Título"
+msgstr ""
+
+#: view.glade:71 view.glade:176 view.glade:272 view.glade:697
+msgid "Año"
+msgstr ""
+
+#: view.glade:86 view.glade:191 view.glade:287 view.glade:723
+msgid "Duración"
+msgstr ""
+
+#: view.glade:101 view.glade:206 view.glade:302 view.glade:748
+msgid "Director"
+msgstr ""
+
+#: view.glade:115
+msgid "Vista"
+msgstr ""
+
+#: view.glade:134
+msgctxt "Label for all movie list"
+msgid "Todas"
+msgstr ""
+
+#: view.glade:229
+msgctxt "Label for only watched movie list"
+msgid "Vistas"
+msgstr ""
+
+#: view.glade:325
+msgctxt "Label for only not watched movie list"
+msgid "Pendientes"
+msgstr ""
+
+#: view.glade:370
+msgid "Introduzca películas para empezar a trabajar"
+msgstr ""
+
+#. Título de la ventana
+#: view.glade:453 view.glade:835
+msgid "Recomendaciones"
+msgstr ""
+
+#: view.glade:477
+msgid "Eliminar película"
+msgstr ""
+
+#: view.glade:483
+msgid "¿Desea eliminar esta película?"
+msgstr ""
+
+#: view.glade:545
+msgid "Advertencia"
+msgstr ""
+
+#: view.glade:551
+msgid "Ninguna película seleccionada"
+msgstr ""
+
+#: view.glade:552
+msgid "Debe seleccionar una película en la lista para continuar"
+msgstr ""
+
+#: view.glade:607
+msgid "Add / Edit"
+msgstr ""
+
+#: view.glade:782
+msgid "Título vacío"
+msgstr ""
+
+#: view.glade:788
+msgid "No existe el título"
+msgstr ""
+
+#: view.glade:789
+msgid "Debe introducir un título para la película"
+msgstr ""
+
+#: view.glade:877
+msgid "Fecha de lanzamiento"
+msgstr ""
+
+#: view.glade:930
+msgid "Actualizando"
+msgstr ""
+
+#: view.glade:971
+msgid "Actualizando lista..."
+msgstr ""
+
+#: view.glade:1021
+msgid "Error de conexión"
+msgstr ""
+
+#: view.glade:1025
+msgid "Error al recibir recomendaciones"
+msgstr ""
+
+#: view.glade:1026
+msgid "Compruebe su conexión a internet"
+msgstr ""
